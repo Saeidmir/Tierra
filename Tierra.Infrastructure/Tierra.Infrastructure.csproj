@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Tierra.Application\Tierra.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    </ItemGroup>
+
 </Project>
