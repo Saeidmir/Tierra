@@ -1,4 +1,4 @@
-namespace Tierra.Infrastructure.Models
+namespace Tierra.Infrastructure.EF.Models
 {
     internal class LocalizationReadModel
     {

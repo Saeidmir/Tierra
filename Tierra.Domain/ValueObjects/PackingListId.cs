@@ -2,10 +2,8 @@
 
 namespace Tierra.Domain.ValueObjects;
 
-public class PackingListId
+public record PackingListId
 {
-    public Guid Value { get; }
-
     public PackingListId(Guid value)
     {
         if (value == Guid.Empty)
@@ -13,6 +11,16 @@ public class PackingListId
         Value = value;
     }
 
-    public static implicit operator Guid(PackingListId id) => id.Value;
-    public static implicit operator PackingListId(Guid id) => new(id);
+    public Guid Value { get; }
+
+    public static implicit operator Guid(PackingListId id)
+    {
+        return id.Value;
+    }
+
+
+    public static implicit operator PackingListId(Guid id)
+    {
+        return new PackingListId(id);
+    }
 }

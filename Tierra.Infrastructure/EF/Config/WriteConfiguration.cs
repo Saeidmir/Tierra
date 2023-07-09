@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tierra.Domain.Entities;
 using Tierra.Domain.ValueObjects;
 
-namespace Tierra.Infrastructure.Config
+namespace Tierra.Infrastructure.EF.Config
 {
     internal sealed class WriteConfiguration : IEntityTypeConfiguration<PackingList>, IEntityTypeConfiguration<PackingItem>
     {

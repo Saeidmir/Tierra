@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Tierra.Infrastructure.Models;
+using Tierra.Infrastructure.EF.Models;
 
-namespace Tierra.Infrastructure.Config
+namespace Tierra.Infrastructure.EF.Config
 {
     internal sealed class ReadConfiguration : IEntityTypeConfiguration<PackingListReadModel>, IEntityTypeConfiguration<PackingItemReadModel>
     {
+        // This is for PackingItemReadModel
+
         public void Configure(EntityTypeBuilder<PackingListReadModel> builder)
         {
             builder.ToTable("PackingLists");
@@ -20,9 +22,12 @@ namespace Tierra.Infrastructure.Config
                 .WithOne(pi => pi.PackingList);
         }
 
+        // This is for PackingItemReadModel
         public void Configure(EntityTypeBuilder<PackingItemReadModel> builder)
         {
             builder.ToTable("PackingItems");
         }
+        
+        // This is for ...
     }
 }
