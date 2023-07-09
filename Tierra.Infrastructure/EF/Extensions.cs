@@ -18,7 +18,7 @@ internal static class Extensions
         services.AddScoped<IPackingListRepository, SqlServerPackingListRepository>();
         services.AddScoped<IPackingListReadService, PostgresPackingListReadService>();
 
-        var options = configuration.GetOptions<SqlServerOptions>("Postgres");
+        var options = configuration.GetOptions<SqlServerOptions>("SqlServer");
         services.AddDbContext<ReadDbContext>(ctx =>
             ctx.UseSqlServer(options.ConnectionString));
         services.AddDbContext<WriteDbContext>(ctx =>
